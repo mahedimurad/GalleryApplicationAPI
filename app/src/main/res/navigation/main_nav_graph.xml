@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph.xml"
+    app:startDestination="@id/galleryFragment">
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        tools:layout="@layout/fragment_gallery"
+        android:name="com.sarwar.galleryapplication.GalleryFragment"
+        android:label="GalleryFragment" >
+        <action
+            android:id="@+id/action_galleryFragment_to_photoViewerFragment"
+            app:destination="@id/photoViewerFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_photo_viewer"
+        android:id="@+id/photoViewerFragment"
+        android:name="com.sarwar.galleryapplication.PhotoViewerFragment"
+        android:label="PhotoViewerFragment" >
+
+        <argument
+            app:nullable="false"
+            android:name="imageUrl"
+            app:argType="string" />
+    </fragment>
+</navigation>
